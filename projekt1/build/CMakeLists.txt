@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18)
+project(projekt1)
+include_directories(../inc)
+add_executable(run_projekt1 ../src/gpiod_utils.c ../src/main.c ../src/semaphore.c)
+target_compile_options(run_projekt1 PRIVATE -Wall -Werror)
+target_link_libraries(run_projekt1 pthread gpiod)
+set_target_properties(run_projekt1 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../)
